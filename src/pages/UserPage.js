@@ -46,12 +46,14 @@ export default function UserPage() {
     const { data } = await supabase.from("users").select("*").order("id", { ascending: true });
     setUsers(data);
     console.log(data);
+    
   }
   async function handleDelete(id) {
     // Logique pour supprimer l'utilisateur de la base de données
     const { data, error } = await supabase.from("users").delete().eq("id", id);
     if (error) {
       console.error("Erreur lors de la suppression de l'utilisateur :", error.message);
+      
     } else {
       console.log("Utilisateur supprimé avec succès :", data);
       fetchUsers();
