@@ -1,6 +1,6 @@
 const express = require('express')
 const cors=require('cors')
-const stripe = require('stripe')('sk_test_51NkqqxLCZk8hjZATWcd8WEmT8PKLNr78Ywbh3TFmhIjWKC1BQJOkeMlQklSKW7x7za0GC7J6LZrfq5gP38wL6wHa00lBIAy4zk');
+const stripe = require('stripe')('');
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -14,8 +14,8 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'gmail', // e.g., 'Gmail'
   auth: {
-    user: 'koussay.zarrouk@esprit.tn',
-    pass: 'dajo nvld ioks lvnw'
+    user: '', // put your address here
+    pass: '' // your secret 
   }
 });
 app.post('/send-email', (req, res) => {
